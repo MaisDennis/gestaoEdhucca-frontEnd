@@ -10,6 +10,7 @@ export const Container = styled.div`
   flex-direction: column;
   background: #F5F5F5;
   border-radius: 14px;
+  padding-bottom: 30px;
   header {
     width: 100%;
     height: 200px;
@@ -88,12 +89,12 @@ export const Container = styled.div`
 
 export const Line = styled.li`
   width: 100%;
-  height: 74px;
+  height: 55px;
   display: flex;
   justify-content: space-between;
   background: #FFF;
   border-radius: 4px;
-  margin: 15px 0;
+  margin: 3px 0;
   padding: 0 15px;
   div.deliverymanDiv {
     display: flex;

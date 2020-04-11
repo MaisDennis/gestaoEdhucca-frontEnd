@@ -18,7 +18,7 @@ export default function CompanyList() {
     const response = await api.get('companies', {
       // params: { test: filter },
     })
-
+    console.tron.log(response)
     setCompanies(response.data)
   }
   console.tron.log(companies);
@@ -39,7 +39,7 @@ export default function CompanyList() {
       <header>
         <strong>Gerenciando empresas</strong>
         <div>
-          <input name='filter' className='filter' placeholder='Busca por alunos'
+          <input name='filter' className='filter' placeholder='Busca por empresas'
             onChange={handleInputChange} onKeyDown={handleQueryInput}
           />
           <Link to='/companies'>
@@ -49,9 +49,9 @@ export default function CompanyList() {
         <p>
           <strong>ID</strong>
           <strong>Nome</strong>
-          <strong>CPF</strong>
+          <strong>CNPJ</strong>
           <strong>Situação</strong>
-          <strong>Ações</strong>
+          <strong>Nº alunos</strong>
         </p>
       </header>
 
@@ -62,7 +62,7 @@ export default function CompanyList() {
             <strong>{c.name}</strong>
             <strong>{c.cnpj}</strong>
             <strong>Ativo</strong>
-            <strong>Contrato</strong>
+            <strong>3</strong>
 
           </Line>
         )}

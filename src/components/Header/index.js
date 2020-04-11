@@ -13,6 +13,7 @@ export default function Header() {
             <li><Link to="/students">Alunos</Link></li>
             <li><Link to="/companies">Empresas</Link></li>
             <li><Link to="/contracts">Contratos</Link></li>
+            <li><Link to="/calendar">Calendário</Link></li>
             <li><Link to="/">Sair</Link></li>
 
 

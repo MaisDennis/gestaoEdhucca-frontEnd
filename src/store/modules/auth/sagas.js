@@ -21,7 +21,10 @@ export function* signIn({ payload }) {
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
-    yield put(signInSuccess(token, user));
+    const calendar = yield call(api.get, 'calendars');
+    console.tron.log(calendar)
+
+    yield put(signInSuccess(token, user, calendar));
     history.push('/dashboard');
   } catch (err) {
     yield put(signFailure());

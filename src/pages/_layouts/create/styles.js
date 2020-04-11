@@ -1,5 +1,22 @@
 import styled from 'styled-components';
 import { darken} from 'polished';
+import { Select as bySelect } from '@rocketseat/unform';
+
+export const Select =styled(bySelect)`
+  background: rgba(0,0,0,0.1);
+  border: 0;
+  border-radius: 4px;
+  height: 44px;
+  width: 100%;
+  padding: 0 15px;
+  color: #fff;
+  margin: 0 0;
+  justify-content: space-between;
+  &::placeholder {
+    color: rgba(255,255,255,0.7);
+  };
+
+`;
 
 export const Container = styled.div`
   max-width: 600px;
@@ -26,6 +43,20 @@ export const Container = styled.div`
         color: rgba(255,255,255,0.7);
       }
     }
+    div.content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      div.subcontent {
+      width: 49%;
+      margin-bottom: 15px;
+
+      display: flex;
+      align-self: center;
+    }
+    }
+
+
     span {
       color: #fb6c91;
       align-self: flex-start;

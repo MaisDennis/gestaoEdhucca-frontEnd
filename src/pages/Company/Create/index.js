@@ -8,7 +8,6 @@ import api from '~/services/api';
 export default function Company() {
 
   async function handleSubmit({ name, cnpj }) {
-    console.tron.log(cnpj)
     try {
       await api.post('companies', {
         name,
@@ -22,7 +21,7 @@ export default function Company() {
 
   function handleInputChange(e) {
     // const mask = mCPF(e)
-    console.tron.log('e')
+    // console.tron.log('e')
   }
 
   return (
@@ -30,7 +29,7 @@ export default function Company() {
       <h2>Empresas</h2>
       <Form onSubmit={handleSubmit}>
         <Input name="name" type="text" placeholder="Nome da empresa" />
-        <Input name="123"  placeholder="Ex.: 00.000.000/0000-00" onChange={handleInputChange} />
+        <Input name="cnpj"  placeholder="Ex.: 00.000.000/0000-00" onChange={handleInputChange} />
         <button type="submit">Cadastrar</button>
 
       </Form>

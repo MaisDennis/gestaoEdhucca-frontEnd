@@ -8,8 +8,10 @@ import Student from '~/pages/Student/Create';
 import StudentList from '~/pages/Student/List';
 import Company from '~/pages/Company/Create';
 import CompanyList from '~/pages/Company/List';
-import Contract from '~/pages/Contract';
+import Contract from '~/pages/Contract/Create';
+import ContractList from '~/pages/Contract/List';
 import Profile from '~/pages/Profile';
+import Calendar from '~/pages/Calendar';
 
 export default function Routes() {
 
@@ -23,7 +25,9 @@ export default function Routes() {
       <Route path="/companies" exact component={Company} isPrivate/>
       <Route path="/companies/list" exact component={CompanyList} isPrivate/>
       <Route path="/contracts" exact component={Contract} isPrivate/>
+      <Route path="/contracts/list" exact component={ContractList} isPrivate/>
       <Route path="/profile" exact component={Profile} isPrivate/>
+      <Route path="/calendar" exact component={Calendar} isPrivate/>
 
       <Route path="/" component={() => <h3>404 Not Found</h3>} />
     </Switch>

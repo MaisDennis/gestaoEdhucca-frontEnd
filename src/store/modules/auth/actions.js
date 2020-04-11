@@ -4,10 +4,10 @@ export function signInRequest( email, password) {
     payload: { email, password },
   };
 }
-export function signInSuccess(token, user) {
+export function signInSuccess(token, user, calendar) {
   return {
     type: '@auth/SIGN_IN_SUCCESS',
-    payload: {token, user },
+    payload: {token, user, calendar },
   };
 };
 export function signFailure() {

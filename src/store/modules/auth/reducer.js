@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   token: null,
   signed: false,
   loading: false,
+  calendar: null,
 };
 
 export default function auth(state= INITIAL_STATE, action) {
@@ -18,6 +19,7 @@ export default function auth(state= INITIAL_STATE, action) {
         draft.token = action.payload.token;
         draft.signed = true;
         draft.loading = false;
+        draft.calendar = action.payload.calendar;
         break;
       }
       case '@auth/SIGN_IN_FAILURE': {
