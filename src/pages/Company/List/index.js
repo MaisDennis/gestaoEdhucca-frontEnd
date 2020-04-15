@@ -18,10 +18,10 @@ export default function CompanyList() {
     const response = await api.get('companies', {
       // params: { test: filter },
     })
-    console.tron.log(response)
+    // console.tron.log(response)
     setCompanies(response.data)
   }
-  console.tron.log(companies);
+  // console.tron.log(companies);
 
   function handleInputChange(e) {
     setQFilter(e.target.value);

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { MdAdd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { format, parseISO } from 'date-fns';
@@ -7,11 +8,13 @@ import pt from 'date-fns/locale/pt';
 import api from '~/services/api';
 import { Container, Line } from '~/pages/_layouts/list/styles';
 import Approval  from '~/components/Approval';
-// import ListActions from '~/components/ListActions';
+import ContractDetails from '~/pages/Contract/Details';
+import { startDetails } from '~/store/modules/auth/actions';
 
 export default function ContractList() {
   const [ contracts, setContracts ] = useState([]);
   const [ qFilter, setQFilter ] = useState([]);
+  const dispatch = useDispatch();
   const formattedDate = fdate =>
     fdate == null
       ? ''
@@ -28,7 +31,7 @@ export default function ContractList() {
     //console.tron.log(response)
     setContracts(response.data)
   }
-  console.tron.log(contracts);
+  // console.tron.log(contracts);
 
   function handleInputChange(e) {
     setQFilter(e.target.value);
@@ -40,6 +43,8 @@ export default function ContractList() {
     // console.log(qFilter);
     loadContracts(qFilter);
   }
+
+
 
   return (
    <Container>
@@ -74,7 +79,7 @@ export default function ContractList() {
             <strong>{formattedDate(c.createdAt)}</strong>
             <strong>{formattedDate(c.start_date)}</strong>
             <strong>{formattedDate(c.end_date)}</strong>
-            <strong>detalhes</strong>
+            <strong><Link to={`/contracts/details/${c.id}`} onClick={() => {dispatch(startDetails(c.id))}}>detalhes</Link></strong>
         <strong>{c.token ? 'Aprovado' : <Approval pin={c.id} data={c}></Approval>}</strong>
 
           </Line>

@@ -30,6 +30,7 @@ export const Line = styled.li`
   display: flex;
   justify-content: space-between;
   background: #FFF;
+  opacity: 0.95;
   border-radius: 4px;
   margin: 10px 0;
   padding: 15px;

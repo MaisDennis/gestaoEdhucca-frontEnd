@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Container, Line, LineType, Li } from './styles';
+import { Container, Line, LineType, LiType, Li } from './styles';
 import { getYear } from 'date-fns'
 
 export default function Month( { year, month } ) {
-  const calendars = useSelector(state => state.auth.calendar.data[2].calendar);
+  const calendars = useSelector(state => state.auth.calendar);
+  const test = useSelector(state => state.auth.contract.chrono)
+  console.tron.log(test)
 
   const m = arrayMonth(month, year);
   const f = arrayFirstDay(m);
@@ -116,40 +118,48 @@ export default function Month( { year, month } ) {
         </Line>
         <hr></hr>
         <Line>
-          {fw1.map(f => <li key={f[7]}>{f[3]==0 ? '.' : f[3] }</li>)}
+          {fw1.map(f =>
+            <Li key={f[7]} type={f[5]}>
+              {f[3] == 0 ? '.' : f[3] }
+            </Li>
+          )}
         </Line>
         <LineType>
-          {fw1.map(f => <Li key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </Li>)}
+          {fw1.map(f =>
+            <LiType key={f[7]} type={f[5]}>
+              {f[5] == 0 ? '.' : f[5]}
+            </LiType>
+          )}
         </LineType>
         <Line>
-          {fw2.map(f => <li>{f[3]}</li>)}
+          {fw2.map(f => <Li key={f[7]} type={f[5]}>{f[3]}</Li>)}
         </Line>
         <LineType>
-          {fw2.map(f => <Li key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </Li>)}
+          {fw2.map(f => <LiType key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </LiType>)}
         </LineType>
         <Line>
-          {fw3.map(f => <li>{f[3]}</li>)}
+          {fw3.map(f => <Li key={f[7]} type={f[5]}>{f[3]}</Li>)}
         </Line>
         <LineType>
-          {fw3.map(f => <Li key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </Li>)}
+          {fw3.map(f => <LiType key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </LiType>)}
         </LineType>
         <Line>
-          {fw4.map(f => <li>{f[3]}</li>)}
+          {fw4.map(f => <Li key={f[7]} type={f[5]}>{f[3]}</Li>)}
         </Line>
         <LineType>
-          {fw4.map(f => <Li key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </Li>)}
+          {fw4.map(f => <LiType key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </LiType>)}
         </LineType>
         <Line>
-          {fw5.map(f => <li key={f[7]}>{f[3]==0 ? '.' : f[3] }</li>)}
+          {fw5.map(f => <Li key={f[7]} type={f[5]}>{f[3]==0 ? '.' : f[3] }</Li>)}
         </Line>
         <LineType>
-          {fw5.map(f => <Li key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </Li>)}
+          {fw5.map(f => <LiType key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </LiType>)}
         </LineType>
         <Line>
-          {fw6.map(f => <li key={f[7]}>{f[3]==0 ? '.' : f[3] }</li>)}
+          {fw6.map(f => <Li key={f[7]} type={f[5]}>{f[3]==0 ? '.' : f[3] }</Li>)}
         </Line>
         <LineType>
-          {fw6.map(f => <Li key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </Li>)}
+          {fw6.map(f => <LiType key={f[7]} type={f[5]}>{f[5]==0 ? '.' : f[5]} </LiType>)}
         </LineType>
       </ul>
     </Container>

@@ -15,6 +15,31 @@ export function signFailure() {
     type: '@auth/SIGN_IN_FAILURE',
   }
 }
+
+export function startCalendar() {
+  return {
+    type: '@auth/LOAD_CALENDAR_REQUEST',
+    // payload: calendar ,
+  };
+};
+export function endCalendar( calendar ) {
+  return {
+    type: '@auth/LOAD_CALENDAR_SUCCESS',
+    payload: calendar,
+  };
+};
+export function startDetails( id ) {
+  return {
+    type: '@auth/LOAD_DETAILS_REQUEST',
+    payload: id,
+  };
+};
+export function endDetails( contract ) {
+  return {
+    type: '@auth/LOAD_DETAILS_SUCCESS',
+    payload: contract,
+  }
+}
 export function signUpRequest(name, email, password) {
   return {
     type: '@auth/SIGN_UP_REQUEST',

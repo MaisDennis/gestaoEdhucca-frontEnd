@@ -1,21 +1,32 @@
 import React, { useState, useEffect }  from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Month from '~/components/Month';
-import { Container, Line } from './styles';
+import { Container, Line, EditDiv } from './styles';
 import { getYear, subYears, addYears } from 'date-fns'
 
 export default function Calendar() {
+  const calendars = useSelector(state => state.auth.calendar);
   const [ years, setYears ] = useState(new Date());
+  const last = parseInt(calendars.length) - 1;
 
   async function handlePrevYear() {
-    setYears(subYears(years, 1));
+    if (getYear(years) == calendars[0][1]) {
+    } else {
+      setYears(subYears(years, 1));
+    }
   }
 
   async function handleNextYear() {
-    setYears(addYears(years, 1));
+    if (getYear(years) == calendars[last][1]) {
+    } else {
+      setYears(addYears(years, 1));
+    }
   }
 
   return (
+
     <Container>
       <header>
         <button type="button" onClick={handlePrevYear}>
@@ -25,8 +36,8 @@ export default function Calendar() {
         <button type="button" onClick={handleNextYear}>
           <MdChevronRight size={36} color="#FFF" />
         </button>
+        <Link to="/calendar/edit">Edit</Link>
       </header>
-
       <ul>
         <Line>
           <li>
@@ -60,29 +71,29 @@ export default function Calendar() {
         </Line>
         <Line>
         <li>
-          <span>Abr</span>
+          <span>Jul</span>
           <Month year={years} month={6}>-</Month>
         </li>
         <li>
-        <span>Mai</span>
+        <span>Aug</span>
           <Month year={years} month={7}>-</Month>
         </li>
         <li>
-        <span>Jun</span>
+        <span>Set</span>
           <Month year={years} month={8}>-</Month>
         </li>
         </Line>
         <Line>
         <li>
-          <span>Abr</span>
+          <span>Out</span>
           <Month year={years} month={9}>-</Month>
         </li>
         <li>
-        <span>Mai</span>
+        <span>Nov</span>
           <Month year={years} month={10}>-</Month>
         </li>
         <li>
-        <span>Jun</span>
+        <span>Dez</span>
           <Month year={years} month={11}>-</Month>
         </li>
         </Line>

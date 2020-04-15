@@ -5,34 +5,54 @@ const INITIAL_STATE = {
   signed: false,
   loading: false,
   calendar: null,
+  contract: null,
 };
 
 export default function auth(state= INITIAL_STATE, action) {
 
-  return produce(state, draft => {
-    switch (action.type) {
-      case '@auth/SIGN_IN_REQUEST': {
+  switch (action.type) {
+    case '@auth/SIGN_IN_REQUEST':
+      return produce(state, draft => {
         draft.loading = true;
-        break;
-      }
-      case '@auth/SIGN_IN_SUCCESS': {
+      })
+    case '@auth/SIGN_IN_SUCCESS':
+      return produce(state, draft => {
         draft.token = action.payload.token;
         draft.signed = true;
         draft.loading = false;
         draft.calendar = action.payload.calendar;
-        break;
-      }
-      case '@auth/SIGN_IN_FAILURE': {
+        draft.contract = null;
+      })
+
+    case '@auth/SIGN_IN_FAILURE':
+      return produce(state, draft => {
+      draft.loading = false;
+      })
+    case '@auth/LOAD_CALENDAR_REQUEST':
+      return produce(state, draft => {
+        draft.loading = true;
+      })
+    case '@auth/LOAD_CALENDAR_SUCCESS':
+      return produce(state, draft => {
         draft.loading = false;
-        break;
-      }
-      case '@auth/SIGN_OUT' : {
+        draft.calendar = action.payload;
+      })
+    case '@auth/LOAD_DETAILS_REQUEST':
+    return produce(state, draft => {
+      // draft.loading = true;
+    })
+
+    case '@auth/LOAD_DETAILS_SUCCESS':
+      return produce(state, draft => {
+        // draft.loading = false;
+        draft.contract = action.payload;
+      })
+    case '@auth/SIGN_OUT' :
+      return produce(state, draft => {
         draft.token = null;
         draft.signed = false;
-        break;
-      }
-      default:
-        return state;
-    }
-  })
+      })
+    default:
+      return state;
+  }
 }

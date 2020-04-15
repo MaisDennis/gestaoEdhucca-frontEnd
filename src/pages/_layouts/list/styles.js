@@ -3,7 +3,7 @@ import search from '~/assets/search-24px.svg';
 import { darken} from 'polished';
 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 1400px;
   height: 100%;
   margin: 50px auto;
   display: flex;
