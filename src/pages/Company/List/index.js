@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { MdAdd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 import api from '~/services/api';
@@ -43,7 +42,7 @@ export default function CompanyList() {
             onChange={handleInputChange} onKeyDown={handleQueryInput}
           />
           <Link to='/companies'>
-            <button type="button"><MdAdd size={24} color='#FFF'/>Voltar</button>
+            <button type="button">Voltar</button>
           </Link>
         </div>
         <p>

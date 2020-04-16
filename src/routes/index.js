@@ -10,6 +10,7 @@ import Company from '~/pages/Company/Create';
 import CompanyList from '~/pages/Company/List';
 import Contract from '~/pages/Contract/Create';
 import ContractList from '~/pages/Contract/List';
+import Scan from '~/pages/Contract/Scan';
 import ContractDetails from '~/pages/Contract/Details';
 import Profile from '~/pages/Profile';
 import Calendar from '~/pages/Calendar/List';
@@ -32,6 +33,7 @@ export default function Routes() {
       <Route path="/profile" exact component={Profile} isPrivate/>
       <Route path="/calendar" exact component={Calendar} isPrivate/>
       <Route path="/calendar/edit" exact component={CalendarEdit} isPrivate/>
+      <Route path="/scan" exact component={Scan} />
 
       <Route path="/" component={() => <h3>404 Not Found</h3>} />
     </Switch>

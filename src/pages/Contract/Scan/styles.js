@@ -130,28 +130,3 @@ export const Container = styled.div`
   }
 `;
 
-export const Line = styled.li`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  background: #FFF;
-  opacity: 0.95;
-  border-radius: 4px;
-  margin: 10px 0;
-  padding: 15px;
-  li {
-    span {
-      padding: auto;
-      font-weight: bold;
-      width: 100%;
-      background: none;
-      margin: 0 2px;
-
-    }
-    div{
-      margin: 0 2px;
-    }
-  }
-`;
-

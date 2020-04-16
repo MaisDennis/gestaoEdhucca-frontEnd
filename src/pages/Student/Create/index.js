@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import { Container } from '~/pages/_layouts/create/styles';
 import api from '~/services/api';
+import history from '~/services/history';
 
 export default function Student() {
 
@@ -14,6 +15,7 @@ export default function Student() {
         name,
         cpf,
       })
+      history.push('/students/list');
     }
     catch {
       toast.error('Não foi possível cadastrar. Por favor, verificar o CPF.');

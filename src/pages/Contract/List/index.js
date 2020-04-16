@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { MdAdd } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
@@ -8,7 +7,6 @@ import pt from 'date-fns/locale/pt';
 import api from '~/services/api';
 import { Container, Line } from '~/pages/_layouts/list/styles';
 import Approval  from '~/components/Approval';
-import ContractDetails from '~/pages/Contract/Details';
 import { startDetails } from '~/store/modules/auth/actions';
 
 export default function ContractList() {
@@ -55,7 +53,7 @@ export default function ContractList() {
             onChange={handleInputChange} onKeyDown={handleQueryInput}
           />
           <Link to='/contracts'>
-            <button type="button"><MdAdd size={24} color='#FFF'/>Voltar</button>
+            <button type="button">Voltar</button>
           </Link>
         </div>
         <p>

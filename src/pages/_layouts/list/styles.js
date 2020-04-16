@@ -46,20 +46,20 @@ export const Container = styled.div`
         background: #FFF url(${search}) no-repeat center left 7px;
       }
       button {
-      margin: 5px 0 0;
-      height: 44px;
-      width: 200px;
-      background: #ffdd33;
-      font-weight: bold;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      font-size: 16px;
-      transition: background 0.2s;
-      &:hover {
-        background: ${darken(0.05, '#eac853')};
+        margin: 5px 0 0;
+        height: 44px;
+        width: 200px;
+        background: #ffdd33;
+        font-weight: bold;
+        color: #fff;
+        border: 0;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: background 0.2s;
+        &:hover {
+          background: ${darken(0.05, '#eac853')};
+        }
       }
-    }
     }
     p {
       width: 100%;

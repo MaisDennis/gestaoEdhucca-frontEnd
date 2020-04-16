@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import api from '~/services/api';
+import history from '~/services/history';
 // import { Link } from 'react-router-dom';
 
 import { Container, ActionList, Action } from './styles';
@@ -20,6 +21,7 @@ export default function Approval( { pin, data }) {
   async function handleDelete() {
     await api.delete(`contracts/${upin}/cancel`, {
     })
+    history.push('/contracts/list')
   }
 
   async function handleApproval() {
@@ -29,6 +31,7 @@ export default function Approval( { pin, data }) {
       await api.put(`approvals/${upin}`, {
       })
       // console.tron.log("handleApproval")
+      history.push('/contracts')
     }
   }
 

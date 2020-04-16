@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { darken} from 'polished';
 
 export const Container = styled.div`
   max-width: 700px;
@@ -8,18 +9,49 @@ export const Container = styled.div`
 
   header {
     display: flex;
-    align-self: center;
-    align-items: center;
-    button {
+    justify-content: space-between;
+
+    div {
+      padding: auto;
+      display: flex;
+      flex-direction: row;
+      button {
       border: 0;
       background: none;
+      padding: auto;
+      }
+      div {
+        margin: auto;
+        strong {
+          color: #fff;
+          font-size: 24px;
+          margin: 0 15px;
+        }
+      }
+
     }
-    strong {
-      color: #fff;
-      font-size: 24px;
-      margin: 0 15px;
-    }
+    div {
+      a {
+        button {
+          margin: 5px 0 0;
+          height: 44px;
+          width: 200px;
+          background: #ffdd33;
+          font-weight: bold;
+          color: #fff;
+          border: 0;
+          border-radius: 4px;
+          font-size: 16px;
+          transition: background 0.2s;
+          &:hover {
+            background: ${darken(0.05, '#eac853')};
+          }
+        }
+      }
   }
+  }
+
+
   ul {
   }
 `;

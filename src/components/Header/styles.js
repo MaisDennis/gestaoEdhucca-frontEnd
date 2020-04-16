@@ -28,10 +28,11 @@ export const Content = styled.div `
         display: inline;
         a {
           font-weight: bold;
+          font-size: 15px;
           color: #25415d;
           text-transform: uppercase;
           text-align: center;
-          padding: 0 8px;
+          padding: 0 10px;
           &:hover {
             color: ${darken(0.05, '#a7cfcb')};
           }
@@ -56,6 +57,7 @@ export const Profile = styled.div`
     strong {
       display: block;
       color: #333;
+      font-size: 14px;
     }
     a {
       display: block;

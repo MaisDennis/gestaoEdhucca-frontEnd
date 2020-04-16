@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import search from '~/assets/search-24px.svg';
-import { darken} from 'polished';
 
 export const Container = styled.div`
   max-width: 1400px;
@@ -17,7 +15,6 @@ export const Container = styled.div`
     display: flex;
     align-self: center;
     flex-direction: row;
-    background: yellow;
     border-radius: 14px;
     padding: 14px;
     margin-bottom: 10px;
@@ -26,9 +23,9 @@ export const Container = styled.div`
       flex-direction: column;
       width: 80%;
       strong {
-      text-align: center;
+      text-align: left;
       font-size: 24px;
-      margin: 25px 0;
+      margin: 15px 5px;
       }
       div.content {
         display: flex;
@@ -37,7 +34,7 @@ export const Container = styled.div`
         height: 100%;
         align-items: left;
         margin: 5px 0;
-        background: #999;
+
         div.subcontent {
           display: flex;
           flex-direction: row;
@@ -47,20 +44,20 @@ export const Container = styled.div`
           div.tagcontent {
             width: 50%;
             height: auto;
-            background: blue;
+
             display: flex;
             flex-direction: row;
+            margin: 5px 0;
 
             strong {
               text-align: left;
               font-size: 18px;
               margin: auto 5px;
-              background: yellow;
+
             }
             span {
               text-align: left;
               font-size: 18px;
-              background: yellow;
               margin: auto 5px;
             }
           }
@@ -71,12 +68,53 @@ export const Container = styled.div`
       width: auto;
       height: 100%;
       margin: auto;
+      border-radius: 4px;
     }
   }
   ul {
     width: auto;
-    background: lightgreen;
     align-self: center;
+  }
+  div {
+    margin: auto;
+    div {
+      margin: auto;
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    padding: 0 10px;
+    font-size: 18px;
+    div {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      span {
+        font-weight: bold;
+        margin: 5px 0;
+      }
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: left;
+        margin: 5px 0;
+
+        span {
+          font-weight: normal;
+          width: 70px;
+          margin-right: 25px;
+        }
+      }
+    }
   }
 `;
 

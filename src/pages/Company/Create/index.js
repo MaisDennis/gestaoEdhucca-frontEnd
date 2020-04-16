@@ -1,10 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
 import { Container } from '~/pages/_layouts/create/styles';
 import api from '~/services/api';
+import history from '~/services/history';
 import { startCalendar } from '~/store/modules/auth/actions';
 
 export default function Company() {
@@ -15,7 +16,7 @@ export default function Company() {
         name,
         cnpj,
       })
-
+      history.push('/companies/list');
     }
     catch {
       toast.error('Não foi possível cadastrar. Por favor, verificar o CNPJ.');

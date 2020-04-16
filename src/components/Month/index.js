@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Container, Line, LineType, LiType, Li } from './styles';
 import { getYear } from 'date-fns'
 
 export default function Month( { year, month } ) {
   const calendars = useSelector(state => state.auth.calendar);
-  const test = useSelector(state => state.auth.contract.chrono)
-  console.tron.log(test)
+  // const calendars = useSelector(state => state.auth.contract.chrono)
+  // console.tron.log(test)
 
   const m = arrayMonth(month, year);
-  const f = arrayFirstDay(m);
+
   const fw = arrayFirstWeek(m);
   const fw1 = fw.array1;
   const fw2 = fw.array2;
@@ -35,16 +35,6 @@ export default function Month( { year, month } ) {
     return array0
   }
 
-  function arrayFirstDay(month) {
-    let test;
-    let i;
-
-    for ( i = 0; i < month.length; i += 1) {
-      test =month[0][4]
-    }
-
-    return test
-  }
 
   function arrayFirstWeek(month) {
     let test;

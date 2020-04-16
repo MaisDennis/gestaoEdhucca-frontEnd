@@ -1,15 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import {MdChevronLeft, MdChevronRight } from 'react-icons/md';
-import { loadCalendar } from '~/store/modules/auth/actions';
+import React from 'react';
 
 import { Container } from './styles';
-export default function Dashboard() {
-  const dispatch = useDispatch()
 
-  useEffect(() => {
-    // dispatch(loadCalendar())
-  }, [])
+export default function Dashboard() {
 
   return (
     <Container>

@@ -1,10 +1,11 @@
-import React, { useState, useEffect }  from 'react';
+import React, { useState }  from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import {MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import Month from '~/components/Month';
-import { Container, Line, EditDiv } from './styles';
+import { Container, Line } from './styles';
 import { getYear, subYears, addYears } from 'date-fns'
+
 
 export default function Calendar() {
   const calendars = useSelector(state => state.auth.calendar);
@@ -25,19 +26,34 @@ export default function Calendar() {
     }
   }
 
+
   return (
 
     <Container>
       <header>
+      <div>
         <button type="button" onClick={handlePrevYear}>
           <MdChevronLeft size={36} color="#FFF" />
         </button>
-          <strong>{getYear(years)}</strong>
+          <div>
+            <strong>{getYear(years)}</strong>
+          </div>
+
         <button type="button" onClick={handleNextYear}>
           <MdChevronRight size={36} color="#FFF" />
         </button>
-        <Link to="/calendar/edit">Edit</Link>
+      </div>
+      <div>
+        <Link to='/calendar/edit'>
+          <button className="edit" type="button">Editar</button>
+        </Link>
+      </div>
+
+
       </header>
+
+
+
       <ul>
         <Line>
           <li>

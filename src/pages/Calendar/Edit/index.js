@@ -1,11 +1,11 @@
 import React, { useState }  from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Form, Input } from '@rocketseat/unform';
 import { getYear, subYears, addYears, parseISO, format } from 'date-fns'
 import pt from 'date-fns/locale/pt';
-import history from '~/services/history';
 
 import Month from '~/components/Month';
 import { Container, Line } from './styles';
@@ -98,9 +98,11 @@ export default function Calendar() {
     }
   }
 
-
   return (
     <Container>
+       <Link to='/calendar'>
+          <button className="voltar" type="button">Voltar</button>
+        </Link>
        <Form onSubmit={handleSubmit}>
        <div className="content">
           <div className="subcontent">
