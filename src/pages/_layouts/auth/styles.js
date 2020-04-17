@@ -6,10 +6,11 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 `;
 export const Content = styled.div`
   width: 100%;
-  max-width: 315px;
+  max-width: 1400px;
   text-align: center;
   div {
     img {
@@ -24,11 +25,15 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
     margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+
     input {
       background: rgba(0,0,0,0.1);
       border: 0;
       border-radius: 4px;
       height: 44px;
+      width: 280px;
       padding: 0 15px;
       color: #fff;
       margin: 0 0 10px;
@@ -38,7 +43,9 @@ export const Content = styled.div`
     }
     button {
       margin: 5px 0 0;
+      padding: 0 15px;
       height: 44px;
+      width: 200px;
       background: #25415d;
       font-weight: bold;
       color: #fff;

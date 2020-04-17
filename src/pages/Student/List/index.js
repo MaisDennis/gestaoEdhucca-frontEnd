@@ -33,6 +33,20 @@ export default function StudentList() {
     loadStudents(qFilter);
   }
 
+  let formattedCpf = (str) => {
+    //Filter only numbers from the input
+    let cleaned = ('' + str).replace(/\D/g, '');
+
+    //Check if the input is of correct length
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{3})(\d{2})$/);
+
+    if (match) {
+      return '' + match[1] + '.' + match[2] + '.' + match[3] + '-' + match[4]
+    };
+
+    return null
+  };
+
   return (
    <Container>
       <header>
@@ -59,7 +73,7 @@ export default function StudentList() {
           <Line key={s.id}>
             <strong>#{s.id}</strong>
             <strong>{s.name}</strong>
-            <strong>{s.cpf}</strong>
+            <strong>{formattedCpf(s.cpf)}</strong>
             <strong>Ativo</strong>
             <strong>Contrato</strong>
 

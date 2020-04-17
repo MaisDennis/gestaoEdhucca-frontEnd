@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import api from '~/services/api';
 import { Container, Line } from '~/pages/_layouts/list/styles';
-// import ListActions from '~/components/ListActions';
 
 export default function CompanyList() {
   const [ companies, setCompanies ] = useState([]);
@@ -33,6 +32,20 @@ export default function CompanyList() {
     loadCompanies(qFilter);
   }
 
+  let formattedCnpj = (str) => {
+    //Filter only numbers from the input
+    let cleaned = ('' + str).replace(/\D/g, '');
+
+    //Check if the input is of correct length
+    let match = cleaned.match(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/);
+
+    if (match) {
+      return match[1] + '.' + match[2] + '.' + match[3] + '/' + match[4] + '-' + match[5]
+    };
+
+    return null
+  };
+
   return (
    <Container>
       <header>
@@ -59,7 +72,7 @@ export default function CompanyList() {
           <Line key={c.id}>
             <strong>#{c.id}</strong>
             <strong>{c.name}</strong>
-            <strong>{c.cnpj}</strong>
+            <strong>{formattedCnpj(c.cnpj)}</strong>
             <strong>Ativo</strong>
             <strong>3</strong>
 

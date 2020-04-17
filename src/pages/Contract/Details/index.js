@@ -15,6 +15,34 @@ export default function ContractDetails() {
       ? ''
       : format(parseISO(fdate), "dd '/' MM '/' yyyy", { locale: pt });
 
+  let formattedCpf = (str) => {
+    //Filter only numbers from the input
+    let cleaned = ('' + str).replace(/\D/g, '');
+
+    //Check if the input is of correct length
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{3})(\d{2})$/);
+
+    if (match) {
+      return '' + match[1] + '.' + match[2] + '.' + match[3] + '-' + match[4]
+    };
+
+    return null
+  };
+
+  let formattedCnpj = (str) => {
+    //Filter only numbers from the input
+    let cleaned = ('' + str).replace(/\D/g, '');
+
+    //Check if the input is of correct length
+    let match = cleaned.match(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})$/);
+
+    if (match) {
+      return match[1] + '.' + match[2] + '.' + match[3] + '/' + match[4] + '-' + match[5]
+    };
+
+    return null
+  };
+
   const semester1 = [ 0, 1, 2, 3, 4, 5 ];
   const semester2 = [ 6, 7, 8, 9, 10, 11 ];
   const semester3 = [ 12, 13, 14, 15, 16, 17 ];
@@ -92,7 +120,7 @@ export default function ContractDetails() {
               </div>
               <div className="tagcontent">
                 <strong>CPF:</strong>
-                <span>{contract.student.cpf}</span>
+                <span>{formattedCpf(contract.student.cpf)}</span>
               </div>
             </div>
             <div className="subcontent">
@@ -102,7 +130,7 @@ export default function ContractDetails() {
               </div>
               <div className="tagcontent">
                 <strong>CNPJ:</strong>
-                <span>{contract.company.cnpj}</span>
+                <span>{formattedCnpj(contract.company.cnpj)}</span>
               </div>
             </div>
             <div className="subcontent">

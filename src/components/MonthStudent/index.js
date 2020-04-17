@@ -5,7 +5,7 @@ import { getYear } from 'date-fns'
 
 export default function Month( { year, month } ) {
   const calendars = useSelector(state => state.auth.calendar);
-  const chrono = useSelector(state => state.auth.contract.chrono)
+  // const chrono = useSelector(state => state.auth.contract.chrono)
   //console.tron.log(test)
   //console.tron.log(calendars)
 

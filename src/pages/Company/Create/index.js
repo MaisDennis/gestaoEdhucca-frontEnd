@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
@@ -7,11 +7,15 @@ import { Container } from '~/pages/_layouts/create/styles';
 import api from '~/services/api';
 import history from '~/services/history';
 import { startCalendar } from '~/store/modules/auth/actions';
+import InputMask from 'react-input-mask';
 
 export default function Company() {
   const dispatch = useDispatch();
-  async function handleSubmit({ name, cnpj }) {
+  const [masked, setMasked] = useState(' ');
+
+  async function handleSubmit({ name }) {
     try {
+      const cnpj = masked.replace(/\D/gim, '');
       await api.post('companies', {
         name,
         cnpj,
@@ -35,6 +39,12 @@ export default function Company() {
       <Form onSubmit={handleSubmit}>
         <Input name="name" type="text" placeholder="Nome da empresa" />
         <Input name="cnpj"  placeholder="Ex.: 00.000.000/0000-00" onChange={handleInputChange} />
+        <InputMask
+          name ="cnpj" mask="99.999.999/9999-99" placeholder="Ex.: 00.000.000/0000-00" maskChar="_"
+            onChange={e => {
+              setMasked(e.target.value);
+            }}
+        />
         <button type="submit">Cadastrar</button>
 
       </Form>

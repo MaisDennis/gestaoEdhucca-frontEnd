@@ -47,12 +47,12 @@ export const Container = styled.div`
       flex-direction: row;
       justify-content: space-between;
       div.subcontent {
-      width: 49%;
-      margin-bottom: 15px;
+        width: 49%;
+        margin-bottom: 15px;
 
-      display: flex;
-      align-self: center;
-    }
+        display: flex;
+        align-self: center;
+      }
     }
 
 
@@ -71,6 +71,7 @@ export const Container = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
+      width: 100%;
       background: #25415d;
       font-weight: bold;
       color: #fff;
