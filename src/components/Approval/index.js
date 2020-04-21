@@ -3,11 +3,9 @@ import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import api from '~/services/api';
 import history from '~/services/history';
-// import { Link } from 'react-router-dom';
-
 import { Container, ActionList, Action } from './styles';
 
-export default function Approval( { pin, data }) {
+export default function Approval( { pin }) {
   const [visible, setVisible] = useState(false);
   const [upin, setUpin] = useState();
   const coordinator = useSelector(state => state.user.profile.coordinator);
@@ -15,7 +13,6 @@ export default function Approval( { pin, data }) {
   async function handleToggleVisible() {
     setVisible(!visible);
     await setUpin(pin);
-    console.tron.log(coordinator)
   }
 
   async function handleDelete() {
@@ -41,7 +38,6 @@ export default function Approval( { pin, data }) {
         <ActionList visible={visible}>
           <Action onClick={handleApproval}>Aprovar</Action>
           <Action onClick={handleDelete}>Cancelar</Action>
-
         </ActionList>
       </button>
     </Container>

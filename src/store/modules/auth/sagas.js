@@ -14,7 +14,7 @@ export function* signIn({ payload }) {
     });
     const responseCalendar = yield call(api.get, 'calendars');
     const calendar = responseCalendar.data[0].calendar
-    console.tron.log(calendar)
+    // console.tron.log(calendar)
 
     const { token, user } = response.data;
     if (!user.coordinator) {
@@ -27,6 +27,7 @@ export function* signIn({ payload }) {
     history.push('/dashboard');
 
   } catch (err) {
+
     yield put(signFailure());
     toast.error('Falha na autenticação, verifique seus dados');
   }
@@ -45,16 +46,13 @@ export function* loadCalendar() {
   // console.tron.log(parsedCalendar)
   const responseCalendar = yield call(api.get, 'calendars');
     const calendar = responseCalendar.data[0].calendar
-    console.tron.log(calendar)
+    // console.tron.log(calendar)
 
   yield put(endCalendar(calendar));
 }
 
 export function* loadDetails({ payload }) {
-
-
   const parsedId = parseInt(payload)
-
   const responseDetails = yield call(api.get, 'contracts');
   // console.tron.log(responseDetails.data)
   const contract = responseDetails.data.find(r => r.id == parsedId)
@@ -81,7 +79,6 @@ export function signOut() {
   history.push('/');
 }
 
-
 export default all([
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
@@ -89,5 +86,4 @@ export default all([
   takeLatest('@auth/LOAD_DETAILS_REQUEST', loadDetails),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
   takeLatest('@auth/SIGN_OUT', signOut),
-
 ]);

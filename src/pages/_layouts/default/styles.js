@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   background: linear-gradient(-90deg, #0077b3, #a7cfcb);
   div.def {
     display: flex;
-
     width: 100%;
     height: 20px;
     align-items: flex-end;

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
+
 export const Wrapper = styled.div`
   height: 100%;
   background: linear-gradient(-90deg, #0077b3, #a7cfcb);
@@ -8,6 +9,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
 `;
+
 export const Content = styled.div`
   width: 100%;
   max-width: 1400px;
@@ -27,7 +29,6 @@ export const Content = styled.div`
     margin-top: 30px;
     justify-content: center;
     align-items: center;
-
     input {
       background: rgba(0,0,0,0.1);
       border: 0;

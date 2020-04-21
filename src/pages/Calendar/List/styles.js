@@ -6,11 +6,9 @@ export const Container = styled.div`
   margin: 50px auto;
   display: flex;
   flex-direction: column;
-
   header {
     display: flex;
     justify-content: space-between;
-
     div {
       padding: auto;
       display: flex;
@@ -28,7 +26,6 @@ export const Container = styled.div`
           margin: 0 15px;
         }
       }
-
     }
     div {
       a {
@@ -48,11 +45,7 @@ export const Container = styled.div`
           }
         }
       }
-  }
-  }
-
-
-  ul {
+    }
   }
 `;
 
@@ -73,9 +66,8 @@ export const Line = styled.li`
       width: 100%;
       background: none;
       margin: 0 2px;
-
     }
-    div{
+    div {
       margin: 0 2px;
     }
   }

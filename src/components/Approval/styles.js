@@ -16,22 +16,22 @@ export const Action = styled(Link)`
 `;
 
 export const Container = styled.div`
-   position: relative;
-   button {
+  position: relative;
+  button {
     margin: auto;
     padding: 6px 10px;
-      height: auto;
-      background: #25415d;
-      font-weight: normal;
-      color: #fff;
-      border: 0;
-      border-radius: 4px;
-      font-size: 14px;
-      transition: background 0.2s;
-      &:hover {
-        background: ${darken(0.05, '#25415d')};
-      }
-   }
+    height: auto;
+    background: #25415d;
+    font-weight: normal;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.2s;
+    &:hover {
+      background: ${darken(0.05, '#25415d')};
+    }
+  }
 `;
 
 export const ActionList = styled.div`
@@ -46,7 +46,6 @@ export const ActionList = styled.div`
   display: ${props => props.visible ? 'flex' : 'none'};
   flex-direction: column;
   justify-content: space-between;
-
   &::after {
     content: '';
     position: absolute;

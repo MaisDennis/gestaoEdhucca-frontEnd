@@ -1,14 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import api from '~/services/api';
-import { Container, Line } from './styles';
-import { Form, Input } from '@rocketseat/unform';
-
 
 export default function Month( { pin } ) {
   // const [ calendars, setCalendars ] = useState([]);
   const calendars = useSelector(state => state.auth.calendar.data[2].calendar);
 
+
+  <input name='filter' className='filter' placeholder='Busca por contratos'
+  onChange={handleInputChange} onKeyDown={handleQueryInput}
+/>
 
 /*
   async function loadCalendar() {
@@ -17,6 +15,14 @@ export default function Month( { pin } ) {
     setCalendars(response.data[0].calendar);
     // console.tron.log(response.data)
   }
+
+  // input mask do companies (cnpj).
+  <InputMask
+          name ="cnpj" mask="99.999.999/9999-99" placeholder="Ex.: 00.000.000/0000-00" maskChar="_"
+            onChange={e => {
+              setMasked(e.target.value);
+            }}
+        />
 
 */
   const m = arrayMonth();

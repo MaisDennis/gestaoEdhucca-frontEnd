@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import { Form, Input } from '@rocketseat/unform';
 import { getYear, subYears, addYears, parseISO, format } from 'date-fns'
 import pt from 'date-fns/locale/pt';
-
 import Month from '~/components/Month';
 import { Container, Line } from './styles';
 import api from '~/services/api';
@@ -17,6 +16,7 @@ export default function Calendar() {
   const calendars = useSelector(state => state.auth.calendar);
   const [ years, setYears ] = useState(new Date());
   const last = parseInt(calendars.length) - 1;
+
   const formattedDate = fdate =>
     fdate == null
       ? ''

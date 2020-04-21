@@ -11,19 +11,15 @@ export const Container = styled.div`
       font-weight: bold;
       color: #fff;
       text-align: center;
-      top: -20px;
-
+      margin-bottom: 15px;
     }
   header {
     width: 100%;
     display: flex;
-    align-self: center;
     flex-direction: column;
-
     border-radius: 14px;
     padding: 14px;
     margin-bottom: 10px;
-
     a {
       color: #FFF;
       margin-top: 15px;
@@ -32,23 +28,20 @@ export const Container = styled.div`
       &hover {
         opacity: 1;
       }
-
     }
   }
-
 `;
-// display: ${props => props.visible ? 'flex' : 'none'};
+
 export const Body = styled.div`
 div.d1 {
-    display: flex;
+    display: ${props => props.visible ? 'flex' : 'none'};
     flex-direction: column;
     width: 70%;
     align-items: center;
     margin: 5px 0 0 200px;
     background: #fff;
     border-radius: 4px;
-    box-shadow 3px 3px 3px #222;
-
+    box-shadow: 3px 3px 3px #222;
     div.d2 {
       display: flex;
       flex-direction: row;
@@ -57,14 +50,12 @@ div.d1 {
       margin: 5px 0;
       border-radius: 4px;
       padding: 10px;
-
       div.d3 {
         width: 100%;
         height: 24px;
         display: flex;
         flex-direction: row;
         margin: 5px 15px;
-
         strong {
           text-align: left;
           font-size: 18px;

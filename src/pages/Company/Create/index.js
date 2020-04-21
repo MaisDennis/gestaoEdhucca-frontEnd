@@ -38,13 +38,13 @@ export default function Company() {
       <h2>Empresas</h2>
       <Form onSubmit={handleSubmit}>
         <Input name="name" type="text" placeholder="Nome da empresa" />
-        <Input name="cnpj"  placeholder="Ex.: 00.000.000/0000-00" onChange={handleInputChange} />
         <InputMask
           name ="cnpj" mask="99.999.999/9999-99" placeholder="Ex.: 00.000.000/0000-00" maskChar="_"
             onChange={e => {
               setMasked(e.target.value);
             }}
         />
+
         <button type="submit">Cadastrar</button>
 
       </Form>

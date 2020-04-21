@@ -15,12 +15,13 @@ export default function Scan() {
   const [student, setStudent] = useState([]);
   const [company, setCompany] = useState([]);
   const [chrono, setChrono] = useState([]);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState();
   const loading = useSelector(state => state.auth.loading);
+
   const formattedDate = fdate =>
-  fdate == null
-    ? ''
-    : format(parseISO(fdate), "dd '/' MMM '/' yyyy", { locale: pt });
+    fdate == null
+      ? ''
+      : format(parseISO(fdate), "dd '/' MMM '/' yyyy", { locale: pt });
 
   let formattedCpf = (str) => {
     //Filter only numbers from the input
@@ -35,7 +36,6 @@ export default function Scan() {
 
     return null
   };
-
 
   let formattedCnpj = (str) => {
     //Filter only numbers from the input
@@ -52,24 +52,22 @@ export default function Scan() {
   };
 
   async function handleSubmit( token ) {
-
-        const response = await api.get(`contracts/scan/`, {
-          params: token,
-        })
-        console.tron.log(response)
-        if (response.data == '') {
-          toast.error('Por favor, inserir um código.');
-        } else {
-          setContract(response.data)
-          setStudent(response.data.student)
-          setCompany(response.data.company)
-          const test = response.data.chrono;
-          // const Test = arraybuild(test)
-          // console.tron.log(Test)
-          // setChrono(Test)
-          setVisible(!visible);
-        }
-
+    const response = await api.get(`contracts/scan/`, {
+      params: token,
+    })
+    // console.tron.log(response)
+    if (response.data == '') {
+      toast.error('Por favor, inserir um código.');
+    } else {
+      setContract(response.data)
+      setStudent(response.data.student)
+      setCompany(response.data.company)
+      const test = response.data.chrono;
+      // const Test = arraybuild(test)
+      // console.tron.log(Test)
+      // setChrono(Test)
+      setVisible(!visible);
+    }
   }
 
     // function arraybuild ( chronodata ) {
@@ -140,10 +138,7 @@ export default function Scan() {
             </div>
           </div>
         </div>
-
       </Body>
-
-
     </Container>
   );
 }

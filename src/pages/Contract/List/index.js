@@ -23,10 +23,11 @@ export default function ContractList() {
   }, [])
 
   async function loadContracts(filter) {
+    // console.tron.log(filter)
     const response = await api.get('contracts', {
       // params: { test: filter },
     })
-    //console.tron.log(response)
+
     setContracts(response.data)
   }
   // console.tron.log(contracts);
@@ -42,16 +43,12 @@ export default function ContractList() {
     loadContracts(qFilter);
   }
 
-
-
   return (
    <Container>
       <header>
         <strong>Gerenciando contratos</strong>
         <div>
-          <input name='filter' className='filter' placeholder='Busca por contratos'
-            onChange={handleInputChange} onKeyDown={handleQueryInput}
-          />
+
           <Link to='/contracts'>
             <button type="button">Voltar</button>
           </Link>
@@ -79,7 +76,6 @@ export default function ContractList() {
             <strong>{formattedDate(c.end_date)}</strong>
             <strong><Link to={`/contracts/details/${c.id}`} onClick={() => {dispatch(startDetails(c.id))}}>detalhes</Link></strong>
         <strong>{c.token ? 'Aprovado' : <Approval pin={c.id} data={c}></Approval>}</strong>
-
           </Line>
         )}
       </ul>

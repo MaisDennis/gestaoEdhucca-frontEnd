@@ -15,11 +15,9 @@ export function signFailure() {
     type: '@auth/SIGN_IN_FAILURE',
   }
 }
-
 export function startCalendar() {
   return {
     type: '@auth/LOAD_CALENDAR_REQUEST',
-    // payload: calendar ,
   };
 };
 export function endCalendar( calendar ) {

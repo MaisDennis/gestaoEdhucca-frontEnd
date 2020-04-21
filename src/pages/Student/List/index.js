@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import api from '~/services/api';
 import { Container, Line } from '~/pages/_layouts/list/styles';
-// import ListActions from '~/components/ListActions';
 
 export default function StudentList() {
   const [ students, setStudents ] = useState([]);
@@ -15,12 +13,12 @@ export default function StudentList() {
 
   async function loadStudents(filter) {
     const response = await api.get('students', {
-      // params: { test: filter },
+      params: { test: filter },
     })
-
+    // console.tron.log(filter);
     setStudents(response.data)
   }
-  console.tron.log(students);
+
 
   function handleInputChange(e) {
     setQFilter(e.target.value);

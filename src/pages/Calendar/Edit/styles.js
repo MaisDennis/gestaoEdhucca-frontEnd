@@ -55,9 +55,6 @@ export const Container = styled.div`
         color: rgba(255,255,255,0.7);
       }
     }
-    input.date {
-
-    }
     div.content {
       display: flex;
       flex-direction: column;
@@ -93,7 +90,6 @@ export const Container = styled.div`
       text-transform: uppercase;
       text-align: left;
       margin-bottom: 5px;
-
     }
     button {
       margin: 5px 0 0;
@@ -110,7 +106,6 @@ export const Container = styled.div`
       }
     }
   }
-
   header {
     display: flex;
     align-self: center;
@@ -124,9 +119,6 @@ export const Container = styled.div`
       font-size: 24px;
       margin: 0 15px;
     }
-  }
-  ul {
-
   }
 `;
 
@@ -147,9 +139,8 @@ export const Line = styled.li`
       width: 100%;
       background: none;
       margin: 0 2px;
-
     }
-    div{
+    div {
       margin: 0 2px;
     }
   }

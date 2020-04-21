@@ -29,9 +29,11 @@ export default function Student() {
       <h2>Alunos</h2>
       <Form onSubmit={handleSubmit}>
         <Input name="name"  type="text" placeholder="Nome completo" />
-        <InputMask name ="cpf" mask="999.999.999-99" placeholder="Ex.: 000.000.000-00" maskChar="_" onChange={e => {
+        <InputMask name ="cpf" mask="999.999.999-99" placeholder="Ex.: 000.000.000-00" maskChar="_"
+          onChange={e => {
             setMasked(e.target.value);
-          }} />
+          }}
+        />
         <button type="submit">Cadastrar</button>
       </Form>
       <Link to='/students/list'>

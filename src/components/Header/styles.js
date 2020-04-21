@@ -5,6 +5,7 @@ export const Container = styled.div`
   padding: 0 30px;
   box-shadow: 3px 3px 3px #fff;
 `;
+
 export const Content = styled.div `
   height: 100px;
   max-width: 900px;
@@ -12,7 +13,6 @@ export const Content = styled.div `
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   nav {
     display: flex;
     align-items: center;

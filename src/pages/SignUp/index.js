@@ -6,7 +6,6 @@ import * as Yup from 'yup';
 import logo from '~/assets/logo.png'
 import { signUpRequest } from '~/store/modules/auth/actions';
 
-// import { Container } from './styles';
 export default function SignUp() {
   const dispatch = useDispatch();
   const schema = Yup.object().shape({

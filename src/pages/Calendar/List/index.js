@@ -6,7 +6,6 @@ import Month from '~/components/Month';
 import { Container, Line } from './styles';
 import { getYear, subYears, addYears } from 'date-fns'
 
-
 export default function Calendar() {
   const calendars = useSelector(state => state.auth.calendar);
   const [ years, setYears ] = useState(new Date());
@@ -26,30 +25,26 @@ export default function Calendar() {
     }
   }
 
-
   return (
-
     <Container>
       <header>
-      <div>
-        <button type="button" onClick={handlePrevYear}>
-          <MdChevronLeft size={36} color="#FFF" />
-        </button>
-          <div>
-            <strong>{getYear(years)}</strong>
-          </div>
+        <div>
+          <button type="button" onClick={handlePrevYear}>
+            <MdChevronLeft size={36} color="#FFF" />
+          </button>
+            <div>
+              <strong>{getYear(years)}</strong>
+            </div>
 
-        <button type="button" onClick={handleNextYear}>
-          <MdChevronRight size={36} color="#FFF" />
-        </button>
-      </div>
-      <div>
-        <Link to='/calendar/edit'>
-          <button className="edit" type="button">Editar</button>
-        </Link>
-      </div>
-
-
+          <button type="button" onClick={handleNextYear}>
+            <MdChevronRight size={36} color="#FFF" />
+          </button>
+        </div>
+        <div>
+          <Link to='/calendar/edit'>
+            <button className="edit" type="button">Editar</button>
+          </Link>
+        </div>
       </header>
 
 

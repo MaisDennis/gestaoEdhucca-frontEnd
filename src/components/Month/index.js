@@ -9,7 +9,6 @@ export default function Month( { year, month } ) {
   // console.tron.log(test)
 
   const m = arrayMonth(month, year);
-
   const fw = arrayFirstWeek(m);
   const fw1 = fw.array1;
   const fw2 = fw.array2;
@@ -34,7 +33,6 @@ export default function Month( { year, month } ) {
 
     return array0
   }
-
 
   function arrayFirstWeek(month) {
     let test;

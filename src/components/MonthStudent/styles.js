@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-ul {
-  display: flex;
-  flex-direction: column;
-  margin: 0 10px;
-}
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+  }
 `;
 
 export const Line = styled.li`

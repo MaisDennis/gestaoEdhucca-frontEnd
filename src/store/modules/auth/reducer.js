@@ -39,12 +39,12 @@ export default function auth(state= INITIAL_STATE, action) {
       })
     case '@auth/LOAD_DETAILS_REQUEST':
     return produce(state, draft => {
-      // draft.loading = true;
+      draft.loading = true;
     })
 
     case '@auth/LOAD_DETAILS_SUCCESS':
       return produce(state, draft => {
-        // draft.loading = false;
+        draft.loading = false;
         draft.contract = action.payload;
       })
     case '@auth/SIGN_OUT' :

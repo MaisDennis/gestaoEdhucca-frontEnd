@@ -9,11 +9,11 @@ export const Select =styled(bySelect)`
   height: 44px;
   width: 100%;
   padding: 0 15px;
-  color: #fff;
+  color: #25415d;
   margin: 0 0;
   justify-content: space-between;
   &::placeholder {
-    color: rgba(255,255,255,0.7);
+    color: rgba(0,0,0,0.1);
   };
 `;
 
@@ -48,14 +48,15 @@ export const Container = styled.div`
       justify-content: space-between;
       div.subcontent {
         width: 49%;
-        margin-bottom: 15px;
-
+        margin-bottom: 15px;  ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0 10px;
+      }
         display: flex;
         align-self: center;
       }
     }
-
-
     span {
       color: #fb6c91;
       align-self: flex-start;

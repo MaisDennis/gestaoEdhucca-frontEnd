@@ -14,9 +14,9 @@ export default function CompanyList() {
 
   async function loadCompanies(filter) {
     const response = await api.get('companies', {
-      // params: { test: filter },
+      params: { test: filter },
     })
-    // console.tron.log(response)
+    console.tron.log(filter)
     setCompanies(response.data)
   }
   // console.tron.log(companies);
@@ -75,7 +75,6 @@ export default function CompanyList() {
             <strong>{formattedCnpj(c.cnpj)}</strong>
             <strong>Ativo</strong>
             <strong>3</strong>
-
           </Line>
         )}
       </ul>

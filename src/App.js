@@ -6,11 +6,8 @@ import Routes from './routes';
 import history from './services/history';
 import GlobalStyle from './styles/global';
 import { ToastContainer } from 'react-toastify';
-
 import { store, persistor } from './store';
-
 import { PersistGate } from 'redux-persist/integration/react';
-
 
 function App() {
   return (

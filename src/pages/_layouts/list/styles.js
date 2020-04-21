@@ -79,11 +79,11 @@ export const Container = styled.div`
       }
     }
     ul {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 15px;
-      }
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 15px;
+    }
   }
 `;
 
@@ -128,19 +128,18 @@ export const Line = styled.li`
     font-weight: bold;
     text-transform: uppercase;
     padding: auto;
-
   }
 `;
 
 export const Cover = styled.div`
-position: fixed;
-top: 0;
-left: 0;
-display: ${props => props.visible ? 'flex' : 'none'};
-width: 100%;
-height: 100%;
-background: #000;
-opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: ${props => props.visible ? 'flex' : 'none'};
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
 `;
 
 export const Details = styled.div`

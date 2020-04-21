@@ -1,3 +1,4 @@
+
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -34,7 +35,6 @@ export const Container = styled.div`
         height: 100%;
         align-items: left;
         margin: 5px 0;
-
         div.subcontent {
           display: flex;
           flex-direction: row;
@@ -44,16 +44,13 @@ export const Container = styled.div`
           div.tagcontent {
             width: 50%;
             height: auto;
-
             display: flex;
             flex-direction: row;
             margin: 5px 0;
-
             strong {
               text-align: left;
               font-size: 18px;
               margin: auto 5px;
-
             }
             span {
               text-align: left;
@@ -97,7 +94,6 @@ export const Container = styled.div`
       display: flex;
       flex-direction: column;
       width: 50%;
-
       span {
         font-weight: bold;
         margin: 5px 0;
@@ -107,7 +103,6 @@ export const Container = styled.div`
         flex-direction: row;
         align-items: left;
         margin: 5px 0;
-
         span {
           font-weight: normal;
           width: 70px;
@@ -125,7 +120,6 @@ export const Line = styled.li`
   justify-content: space-between;
   background: #FFF;
   margin: auto;
-
   opacity: 0.95;
   border-radius: 4px;
   margin: 10px 0;
@@ -137,11 +131,9 @@ export const Line = styled.li`
       width: 100%;
       background: none;
       margin: 0 2px;
-
     }
     div{
       margin: 0 2px;
     }
   }
 `;
-
