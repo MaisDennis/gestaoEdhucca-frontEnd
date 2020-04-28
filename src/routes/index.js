@@ -15,6 +15,7 @@ import ContractDetails from '~/pages/Contract/Details';
 import Profile from '~/pages/Profile';
 import Calendar from '~/pages/Calendar/List';
 import CalendarEdit from '~/pages/Calendar/Edit'
+import pki from '~/pages/pki/pki'
 
 export default function Routes() {
 
@@ -34,6 +35,7 @@ export default function Routes() {
       <Route path="/calendar" exact component={Calendar} isPrivate/>
       <Route path="/calendar/edit" exact component={CalendarEdit} isPrivate/>
       <Route path="/scan" exact component={Scan} />
+      <Route path="/.well-known/pki-validation/starfield.html" exact component={pki} />
 
       <Route path="/" component={() => <h3>404 Not Found</h3>} />
     </Switch>
