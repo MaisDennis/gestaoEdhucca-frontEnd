@@ -12,16 +12,23 @@ export default function Contract() {
 
   useEffect(() => {
     async function load() {
-      const sResponse = await api.get('students')
+      const sResponse = await api.get('students', {
+        params: { test: ''},
+      })
       setStudents(sResponse.data);
-      const cResponse = await api.get('companies')
+      const cResponse = await api.get('companies', {
+        params: { test: ''},
+      })
       setCompanies(cResponse.data);
     }
     load();
   }, [])
+   // console.tron.log(students)
+  // console.tron.log(deliveryman)
 
   const sOptions = students.map(s => ({ id: s.id, title: s.name }));
   const cOptions = companies.map(c => ({ id: c.id, title: c.name }));
+  // console.tron.log(rec_options)
 
   async function handleSubmit({ student_id, company_id, start_date }) {
     console.tron.log(start_date)
