@@ -5,12 +5,9 @@ module.exports = {
    */
   apps : [
     {
-      name      : 'frontend-gestaoedhucca',
+      name      : 'EDHUCCA - Front-End',
       script    : 'npm',
-      args      : 'run start:production',
-      env_production : {
-        NODE_ENV: 'production'
-      }
+      args      : 'start',
     },
   ],
 
