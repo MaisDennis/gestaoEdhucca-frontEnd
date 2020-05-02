@@ -5,7 +5,7 @@ module.exports = {
    */
   apps : [
     {
-      name      : 'EDHUCCA - Front-End',
+      name      : 'EDHUCCA-Front-End',
       script    : 'npm',
       args      : 'start',
     },
